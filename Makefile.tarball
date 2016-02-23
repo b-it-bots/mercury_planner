@@ -1,0 +1,20 @@
+all: mercury_planner
+
+TARBALL = build/Mercury-fixed.zip
+TARBALL_URL = 'https://helios.hud.ac.uk/scommv/IPC-14/repo_planners/Mercury-fixed.zip'
+SOURCE_DIR = build/seq-sat-mercury
+UNPACK_CMD = unzip Mercury-fixed.zip -x seq-agl-mercury.tar.gz && tar -xf seq-sat-mercury.tar.gz && ls
+include $(shell rospack find mk)/download_unpack_build.mk
+
+mercury_planner: $(SOURCE_DIR)/unpacked
+	echo 'Compiling mercury planner preprocess (1/2) ... this may take a while, please do not cancel (~30 sec on i7 PC)'
+	cd build/seq-sat-mercury/src/preprocess && make
+	echo 'Compiling mercury planner search (2/2) ... this may take a while, please do not cancel (~2 min on i7 PC)'
+	cd build/seq-sat-mercury/src/search && make
+
+clean:
+	make -C "$(SOURCE_DIR)/src/preprocess" clean
+	make -C "$(SOURCE_DIR)/src/search" clean
+
+wipe: clean
+	rm -rf $(SOURCE_DIR) build
