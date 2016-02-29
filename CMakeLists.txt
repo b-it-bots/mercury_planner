@@ -7,6 +7,11 @@ find_package(catkin REQUIRED COMPONENTS
 add_custom_target(
   mercury_planner ALL
   COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} make -f Makefile.tarball
+  
+  COMMAND cmake -E make_directory ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}
+
+  COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/preprocess/preprocess ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}/
+  COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/search/downward-1 ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}/
 )
 
 catkin_package()
