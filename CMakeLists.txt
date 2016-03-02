@@ -12,6 +12,10 @@ add_custom_target(
 
   COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/preprocess/preprocess ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}/
   COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/search/downward-1 ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}/
+  
+  COMMAND cmake -E make_directory ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}/${PROJECT_NAME}/pddl
+  COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/translate/graph.py ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}/${PROJECT_NAME}/pddl/
+  COMMAND cmake -E copy_directory ${PROJECT_SOURCE_DIR}/build/Mercury-fixed/seq-sat-mercury/src/translate/pddl ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}/${PROJECT_NAME}/pddl/
 )
 
 catkin_package()
