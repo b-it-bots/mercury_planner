@@ -10,8 +10,10 @@ mercury_planner: $(SOURCE_DIR)/unpacked
 	echo "HELLO: " $(SOURCE_DIR)
 	tar -xvf $(SOURCE_DIR)/seq-sat-mercury.tar.gz -C $(SOURCE_DIR)
 	echo 'Compiling mercury planner preprocess (1/2) ...'
+	sed -i 's/-Werror/ \ /g' $(SOURCE_DIR)/seq-sat-mercury/src/preprocess/Makefile
 	make -C $(SOURCE_DIR)/seq-sat-mercury/src/preprocess
 	echo 'Compiling mercury planner search (2/2) ...'
+	sed -i 's/-Werror/ \ /g' $(SOURCE_DIR)/seq-sat-mercury/src/search/Makefile
 	make -C $(SOURCE_DIR)/seq-sat-mercury/src/search
 
 clean:
