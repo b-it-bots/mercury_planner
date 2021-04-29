@@ -2,16 +2,13 @@ mercury_planner
 ===============
 
 Mercury planner is a task planner from International Planning Competition 2014 (IPC) created by 
+Michael Katz and Jörg Hoffmann from Saarland University, Germany. 
+The original planner file was uploaded [here](https://helios.hud.ac.uk/scommv/IPC-14/repo_planners/Mercury-fixed.zip),
+but it is not accessible anymore. Thus we provide the copy of it in this repo under the following url:
 
-Michael Katz and Jörg Hoffmann from Saarland University, Germany. The source of the planner is
-
-provided under the following url:
-
-        https://helios.hud.ac.uk/scommv/IPC-14/repo_planners/Mercury-fixed.zip
+        https://github.com/b-it-bots/mercury_planner/blob/master/files/Mercury-fixed.zip
         
-This package downloads that file, extracts only the sequential satisfactory folder (seq-sat-mercury)
-
-and compiles it.
+This package downloads that file, extracts only the sequential satisfactory folder (seq-sat-mercury) and compiles it.
 
 The dependencies of the planner are:
 
