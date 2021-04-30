@@ -1,7 +1,7 @@
 all: mercury_planner
 
 TARBALL = build/Mercury-fixed.zip
-TARBALL_URL = 'https://helios.hud.ac.uk/scommv/IPC-14/repo_planners/Mercury-fixed.zip'
+TARBALL_URL = 'https://github.com/b-it-bots/mercury_planner/blob/master/files/Mercury-fixed.zip'
 SOURCE_DIR = build/Mercury-fixed
 UNPACK_CMD = unzip -d ../$(SOURCE_DIR)/
 include $(shell rospack find mk)/download_unpack_build.mk
