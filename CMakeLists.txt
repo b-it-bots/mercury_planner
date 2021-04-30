@@ -6,6 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_custom_target(
   mercury_planner ALL
+  COMMAND cmake -E make_directory ${PROJECT_NAME}/build
+  COMMAND cmake -E copy_if_different ${PROJECT_SOURCE_DIR}/files/Mercury-fixed.zip ${PROJECT_SOURCE_DIR}/build/Mercury-fixed.zip
   COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} make -f Makefile.tarball
   
   COMMAND cmake -E make_directory ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_LIB_DESTINATION}/${PROJECT_NAME}
