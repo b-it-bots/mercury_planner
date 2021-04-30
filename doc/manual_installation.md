@@ -8,7 +8,7 @@ The following instructions were tested under ubuntu 14.04 , 64 bit PC and are ro
 
 1. Download the planner
 
-        wget https://helios.hud.ac.uk/scommv/IPC-14/repo_planners/Mercury-fixed.zip
+        wget https://github.com/b-it-bots/mercury_planner/blob/master/files/Mercury-fixed.zip 
 
 2. Install dependencies
 
